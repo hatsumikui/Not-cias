@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <title>Notícias</title>
+</head>
+<body>
+    <header id="inicio">
+        <h1>Rui Notícias</h1>
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/a/a4/Kamishiro_Rui_chibi.png/revision/latest?cb=20230922155927">
+    </header>
+    <div class="navbar">
+        <div class="container">
+            <a href="#inicio">Início</a>
+            <a href="#EducaçãoeCultura">Educação e Cultura</a>
+            <a href="#urgente">Urgente</a>
+            <a href="#comunidade">Comunidade</a>
+            <a href="#saude">Saúde</a>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Pesquisar...">
+                <button id="search-button">Buscar</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="featured-news">
+        <div>
+            <h2>Dia das crianças</h2>
+            <p>Descubra brincadeiras e novidades.</p>
+        </div>
+        <div>
+            <h2>Depressão</h2>
+            <p>Saiba mais sobre esse mal que assola o mundo.</p>
+        </div>
+        <div>
+            <h2>Halloween</h2>
+            <p>Venha ver o que preparamos pra esse mês.</p>
+        </div>
+        <div>
+            <h2>Crime</h2>
+            <p>Venha ver o que aconteceu no assalto de 07/10.</p>
+        </div>
+    </div>
+    
+    
+    <main>
+        <article id="EducaçãoeCultura">
+            <h2>Educação e Cultura</h2>
+            <h3>Dia das crianças</h3>
+            <p>
+                Veja quais principais atividades programadas para acontecer no dia das crianças, de graça, na praça Dom Pedro II, para divertir a criançada!
+            </p>
+            <a href="#">Leia mais</a> <br>
+            <br>
+            <img src="https://i.bandori.party/u/c/art/2044Arisa-Ichigaya-Cool-Memoirs-of-Innocence-HbRehK.png">
+            <img src="https://i.bandori.party/u/c/art/4297Ako-Udagawa-Power-One-Two-Theee-Four-M57q4X.png">
+        </article>
+        <article id="urgente">
+            <h2>Urgente</h2>
+            <h3>Assalto em farmácia com refém</h3>
+            <p>
+                Na noite do dia 07/10 foi flagrado um assalto a mão armada, 3 pessoas foram feitas de refém, houve uma longa negocicação com a polícia.
+            </p>
+            <a href="#">Leia mais</a> <br>
+            <br>
+            <img src="https://static.wikia.nocookie.net/projectsekai/images/3/39/Twilight_Conversation_T.png/revision/latest?cb=20230920031526">
+            <img src="https://static.wikia.nocookie.net/projectsekai/images/6/67/An_Officer%27s_Crisis.png/revision/latest?cb=20211021062921">
+        </article>
+        <article id="saude">
+            <h2>Saúde</h2>
+            <h3>Depressão</h3>
+            <p>
+                Saiba como a depressão tem sido um dos principais problemas da sociedade atual, atingindo principalmente jovens e idosos, saiba como prevenir e buscar ajuda.
+            </p>
+            <a href="#">Leia mais</a> <br>
+            <br>
+            <img src="https://static.wikia.nocookie.net/projectsekai/images/9/95/Abyss_Of_Memories.png/revision/latest?cb=20220721032338">
+            <img src="https://static.wikia.nocookie.net/projectsekai/images/8/81/Embracing_Your_Trembling_Back_With_Kindness.png/revision/latest?cb=20230711030028">
+            <br>
+        </article>
+        <article id="comunidade">
+            <h2>Comunidade</h2>
+            <h3>Halloween</h3>
+            <p>
+                Halloween está chegando, venha ver as fantasias e guloseimas que preparamos para a nossa festa! Inspire-se.
+            </p>
+            <a href="#">Leia mais</a> <br>
+            <br>
+            <img src="https://i.bandori.party/u/c/art/4294Tomoe-Udagawa-Cool-Halloween-Help-oJDULd.png">
+            <img src="https://i.bandori.party/u/c/art/4295MASKING-Power-With-the-Children-LQOMD3.png">
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Trícia e Patrícia</p>
+        <a href="#inicio">Voltar ao Início</a>
+    </footer>
+    
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+    
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    document.getElementById('search-button').addEventListener('click', function() {
+        var searchTerm = document.getElementById('search-input').value.toLowerCase();
+        var articles = document.getElementsByTagName('article');
+        for (var i = 0; i < articles.length; i++) {
+            var article = articles[i];
+            var articleText = article.textContent.toLowerCase();
+            if (articleText.includes(searchTerm)) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        }
+    });
+
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.featured-news').slick({
+                dots: true, // Adiciona pontos de navegação
+                infinite: true, // Navegação infinita
+                speed: 300, // Velocidade da transição
+                slidesToShow: 3, // Quantidade de slides visíveis ao mesmo tempo
+                slidesToScroll: 1, // Quantos slides avançar/retroceder por vez
+                autoplay: true, // Ativa a reprodução automática
+                autoplaySpeed: 2000 // Velocidade da reprodução automática (em milissegundos)
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
